@@ -17,6 +17,10 @@ git clone https://github.com/freenet/fred.git
 git clone https://github.com/freenet/scripts.git
 
 
+# prepare fred build
+echo "lib.contrib.get = true" > fred/override.properties
+
+
 # run the updater
 cd scripts
 ./test-autoupgrade
