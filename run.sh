@@ -4,6 +4,13 @@
 
 # This requires pyFreenet installed and a node with FCP running on 9481
 
+if ! which fcpupload; then
+    >&2 echo "The test needs pyFreenet installed and a Freenet node with FCP running on 9481. See
+        - https://github.com/freenet/pyFreenet/ and
+        - https://freenetproject.org"
+    exit 1
+fi
+
 # get the repositories
 git clone https://github.com/freenet/java_installer.git
 git clone https://github.com/freenet/fred.git
@@ -12,4 +19,5 @@ git clone https://github.com/freenet/scripts.git
 
 # run the updater
 cd scripts
-
+./test-autoupgrade
+cd -
