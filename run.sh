@@ -19,7 +19,8 @@ git clone https://github.com/freenet/scripts.git
 
 # prepare fred build
 echo "lib.contrib.get = true" > fred/override.properties
-
+mkdir -p fred/lib
+wget -O fred/lib/bcprov-jdk15on-152.jar https://downloads.freenetproject.org/latest/bcprov-jdk15on-152.jar
 
 # run the updater
 cd scripts
