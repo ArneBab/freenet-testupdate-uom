@@ -29,6 +29,15 @@ git fetch --all
 git pull --all
 cd -
 
+# get izPack
+mkdir -p java_installer/lib/
+wget -O java_installer/lib/standalone-compiler.jar https://oss.sonatype.org/content/repositories/releases/org/codehaus/izpack/izpack-standalone-compiler/4.3.5/izpack-standalone-compiler-4.3.5.jar
+# compile java_installer
+cd java_installer
+ant
+cp -a res/unix wrapper_unix
+cd -
+
 # prepare fred build
 echo "lib.contrib.get = true" > fred/override.properties
 mkdir -p fred/lib
