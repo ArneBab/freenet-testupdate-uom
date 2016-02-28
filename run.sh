@@ -13,6 +13,17 @@ if ! which fcpupload; then
     exit 1
 fi
 
+python3 << EOF
+try:
+    import timeparser
+except ImportError:
+    import subprocess
+    try:
+        print(subprocess.check_output("pip3 install --user timeparser"))
+    except:
+        print(subprocess.check_output("easy_install --user timeparser"))
+EOF
+
 # get the repositories
 git clone https://github.com/freenet/java_installer.git
 git clone https://github.com/freenet/fred.git
