@@ -1,0 +1,27 @@
+commit b7b71312b8baed55d8bbaaef8b6c4cbed3ab868d
+Author: Arne Babenhauserheide <arne_bab@web.de>
+Date:   Mon Feb 29 00:23:30 2016 +0100
+
+    add output for darknet connet.
+
+diff --git a/test-autoupgrade b/test-autoupgrade
+index 8765127..2892492 100755
+--- a/test-autoupgrade
++++ b/test-autoupgrade
+@@ -140,6 +140,7 @@ def wait_until_online(fcp_port):
+ 
+ def darknet_connect(upstream_fcp, upgrade_target_fcp):
+     # TODO: This could be made to connect more than two by accepting a list.
++    print("trying to connect", upstream_fcp, "and", upgrade_target_fcp, "via darknet")
+     upstream = fcp.FCPNode(port=upstream_fcp)
+     upstream_noderef = upstream.refstats()
+     del upstream_noderef['header']
+@@ -155,6 +156,7 @@ def darknet_connect(upstream_fcp, upgrade_target_fcp):
+ 
+     upstream.shutdown()
+     upgrade_target.shutdown()
++    print("should have connected", upstream_fcp, "and", upgrade_target_fcp, "via darknet")
+ 
+ 
+ def insert(fcp_port, transition_build, continuation_build, old_insert,
+
