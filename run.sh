@@ -45,14 +45,14 @@ cd -
 # now info again
 set -x
 
-# get izPack
-mkdir -p java_installer/lib/
-wget -O java_installer/lib/standalone-compiler.jar https://oss.sonatype.org/content/repositories/releases/org/codehaus/izpack/izpack-standalone-compiler/4.3.5/izpack-standalone-compiler-4.3.5.jar
+# get izPack (no longer needed)
+# mkdir -p java_installer/lib/
+# wget -O java_installer/lib/standalone-compiler.jar https://oss.sonatype.org/content/repositories/releases/org/codehaus/izpack/izpack-standalone-compiler/4.3.5/izpack-standalone-compiler-4.3.5.jar
 # compile java_installer
-cd java_installer
-ant
-cp -a res/unix wrapper_unix
-cd -
+# cd java_installer
+# ant
+# cp -a res/unix wrapper_unix
+# cd -
 
 # prepare fred build
 echo "lib.contrib.get = true" > fred/override.properties
