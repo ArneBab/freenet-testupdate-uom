@@ -13,15 +13,16 @@ if ! which fcpupload; then
     exit 1
 fi
 
-python3 << EOF
+python << EOF
 try:
     import timeparser
 except ImportError:
     import subprocess
     try:
-        print(subprocess.check_output("pip3 install --user timeparser"))
+        print(subprocess.check_output("pip install --user timeparser"))
     except:
         print(subprocess.check_output("easy_install --user timeparser"))
+        print("installed timeparser")
 EOF
 
 # get the repositories
