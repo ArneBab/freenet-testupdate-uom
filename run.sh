@@ -30,6 +30,9 @@ git clone https://github.com/freenet/fred.git
 git clone https://github.com/freenet/scripts.git
 
 # fetch all branches with git complexity
+# first shut up about actions to avoid spamming everything
+set +x
+
 cd fred
 git remote add toad https://github.com/toad/fred-staging.git
 # thank you, stackoverflow: http://stackoverflow.com/a/10312587/7666
@@ -39,6 +42,8 @@ git fetch --all
 # update all local branches
 git pull --all
 cd -
+# now info again
+set -x
 
 # get izPack
 mkdir -p java_installer/lib/
