@@ -40,10 +40,8 @@ git remote add toad https://github.com/toad/fred-staging.git
 for remote in $(git branch -r); do git branch --track $remote; done
 # get all data
 git fetch --all
-# update all local branches
-git pull --all
 cd -
-# now info again
+# now provide command info again
 set -x
 
 # prepare fred build
