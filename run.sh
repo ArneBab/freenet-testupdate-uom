@@ -37,7 +37,7 @@ set +x
 cd fred
 git remote add toad https://github.com/toad/fred-staging.git
 # thank you, stackoverflow: http://stackoverflow.com/a/10312587/7666
-for remote in $(git branch -r); do git branch --track $remote; done
+for remote in $(git branch -r); do git branch --track $remote 1>/dev/null 2>/dev/null; done
 # get all data
 git fetch --all
 cd -
